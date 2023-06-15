@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Coupon Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+    <h2>Coupon Details</h2>
+    Coupon Name: <label th:text="${coupon.getName()}" /><br>
+    Maximum Amount: CAD <label th:text="${coupon.getMaxAmount()}" /><br>
+    Discount Percent: <label th:text="${coupon.getPercent()}" />% <br>
+    <button type="button" value="Delete" th:onclick="|window.location.href='@{'/seller/coupons/delete/' + ${coupon.getCouponID()}}'|">Delete</button>
+    <button type="button" value="Edit" th:onclick="|window.location.href='@{'/seller/coupons/edit/' + ${coupon.getCouponID()}}'|">Edit</button>
+</body>
+</html>

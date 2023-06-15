@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/seller/items/create}" method="POST">
+    <table>
+        <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+        <h1>Add Item</h1>
+        <tr>
+            <td>Item Name:</td>
+            <td><input type=”text” name="itemName"></td>
+        </tr>
+        <tr>
+            <td>Item Description:</td>
+            <td><input type=”text” name="description"></td>
+        </tr>
+        <tr>
+            <td>Item Price:</td>
+            <td><input type=”text” name="price"></td>
+        </tr>
+        <tr>
+            <td>Item Quantity:</td>
+            <td><input type=”text” name="quantity"></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td>
+                <select name="category" id="category">
+                    <option value="GROCERY">Grocery</option>
+                    <option value="RESTAURANT">Restaurant</option>
+                    <option value="LIQUOR">Liquor</option>
+                    <option value="ELECTRONICS">Electronics</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
